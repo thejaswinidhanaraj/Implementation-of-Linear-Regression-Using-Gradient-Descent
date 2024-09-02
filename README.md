@@ -78,7 +78,8 @@ plt.plot(range(0,epochs),error)
 ![Screenshot 2024-09-02 192502](https://github.com/user-attachments/assets/fc0d6055-a096-4adc-96bf-b88d1e2f47ff)
 
 ## Output:
-![linear regression using gradient descent](sam.png)
+!
+![Screenshot 2024-09-02 192502](https://github.com/user-attachments/assets/fc0d6055-a096-4adc-96bf-b88d1e2f47ff)
 
 
 ## Result:
