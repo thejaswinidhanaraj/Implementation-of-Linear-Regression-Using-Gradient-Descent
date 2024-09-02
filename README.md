@@ -1,5 +1,4 @@
 # Implementation-of-Linear-Regression-Using-Gradient-Descent
-
 ## AIM:
 To write a program to predict the profit of a city using the linear regression model with gradient descent.
 
@@ -12,7 +11,6 @@ To write a program to predict the profit of a city using the linear regression m
 2.Write a function computeCost to generate the cost function.
 3.Perform iterations og gradient steps with learning rate.
 4.Plot the Cost function using Gradient Descent and generate the required graph. 
-
 
 ## Program:
 ```
@@ -78,9 +76,7 @@ plt.plot(range(0,epochs),error)
 ![Screenshot 2024-09-02 192502](https://github.com/user-attachments/assets/fc0d6055-a096-4adc-96bf-b88d1e2f47ff)
 
 ## Output:
-!
 ![Screenshot 2024-09-02 192502](https://github.com/user-attachments/assets/fc0d6055-a096-4adc-96bf-b88d1e2f47ff)
-
 
 ## Result:
 Thus the program to implement the linear regression using gradient descent is written and verified using python programming.
