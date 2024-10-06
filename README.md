@@ -19,64 +19,47 @@ Program to implement the linear regression using gradient descent.
 Developed by: THEJASWINI D
 RegisterNumber:  212223110059
 */
-```
-```
+/*
+Program to implement the linear regression using gradient descent.
+Developed by: MERCY A
+RegisterNumber: 212223110027 
+*/
 import numpy as np
 import pandas as pd
-from sklearn.metrics import mean_absolute_error,mean_squared_error
-import matplotlib.pyplot as plt
-dataset=pd.read_csv("student_scores.csv")
-print(dataset.head())
-print(dataset.tail())
-```
-![Screenshot 2024-09-02 191843](https://github.com/user-attachments/assets/5c3fe383-b671-491a-a6cd-f1d28f8d82da)
-```
-dataset.info()
-```
-![Screenshot 2024-09-02 192011](https://github.com/user-attachments/assets/4d6c811e-737c-4e60-97c7-e1eb94ca2ad7)
-```
-X=dataset.iloc[:,:-1].values
+from sklearn.preprocessing import StandardScaler
+def linear_regression(X1,y,learning_rate=0.01,num_iters=1000):
+    X=np.c_[np.ones(len(X1)),X1]
+    theta = np.zeros(X.shape[1]).reshape(-1,1)
+    for _ in range(num_iters):
+        predictions = (X).dot(theta).reshape(-1,1)
+        errors = (predictions-y).reshape(-1,1)
+        theta-=learning_rate*(1/len(X1))*X.T.dot(errors)
+    return theta
+data=pd.read_csv('50_Startups.csv',header=None)
+data.head()
+X = (data.iloc[1:,:-2].values)
 print(X)
-Y=dataset.iloc[:,-1].values
-print(Y)
 ```
-![Screenshot 2024-09-02 192101](https://github.com/user-attachments/assets/46d6350f-aff1-4a04-9d0b-7de7af34ea8f)
+![exp 3 -1](https://github.com/user-attachments/assets/e741039b-50cd-48f3-af42-ef41c10802a3)
 ```
-X.shape
+X1=X.astype(float)
+scaler = StandardScaler()
+y=(data.iloc[1:,-1].values).reshape(-1,1)
+print(y)
 ```
-![Screenshot 2024-09-02 192137](https://github.com/user-attachments/assets/91ec5426-f639-4cfb-b74e-3e717dfc6216)
+![exp3-2](https://github.com/user-attachments/assets/9366b04c-5507-4edb-ac74-84d7a1476fee)
 ```
-Y.shape
+X1_Scaled=scaler.fit_transform(X1)
+print(X1_Scaled)
 ```
-![Screenshot 2024-09-02 192213](https://github.com/user-attachments/assets/e6ab5ea7-6084-43fa-a468-ce478f8b514a)
+![exp3-3](https://github.com/user-attachments/assets/36250bb4-487a-4271-8158-244502891e60)
 ```
-m=0
-c=0
-L=0.001
-epochs=5000
-n=float(len(X))
-error=[]
-from os import XATTR_CREATE
-for i in range(epochs):
-  Y_pred=m*X+c
-  D_m=(-2/n)*sum(X*(Y-Y_pred))
-  D_c=(-2/n)*sum(Y-Y_pred)
-  m=m-L*D_c
-  c=c-L*D_c
-  error.append(sum(Y-Y_pred)**2)
-  print(m,c)
+Y1_Scaled=scaler.fit_transform(y)
+print(Y1_Scaled)
 ```
-![Screenshot 2024-09-02 192402](https://github.com/user-attachments/assets/5f55d8b3-f5b2-4b1d-86f9-70d467c26b4b)
-```
-type(error)
-print(len(error))
-plt.plot(range(0,epochs),error)
-```
-![Screenshot 2024-09-02 192453](https://github.com/user-attachments/assets/bb20beee-4273-46a8-bca1-1087212e7527)
-![Screenshot 2024-09-02 192502](https://github.com/user-attachments/assets/fc0d6055-a096-4adc-96bf-b88d1e2f47ff)
+![exp3-4](https://github.com/user-attachments/assets/50cf7306-8853-4e69-a0e7-60f2db2f8928)
 
 ## Output:
-![Screenshot 2024-09-02 192502](https://github.com/user-attachments/assets/fc0d6055-a096-4adc-96bf-b88d1e2f47ff)
-
+![exp3-5](https://github.com/user-attachments/assets/a9df90a8-539b-495e-b5ac-e117b8778c5d)
 ## Result:
 Thus the program to implement the linear regression using gradient descent is written and verified using python programming.
